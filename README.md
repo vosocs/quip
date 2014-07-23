@@ -5,7 +5,7 @@ QUIP
 
 ###Purpose
 
-
+Though the data associated with medical radiation equipment tests is somewhat standard, it is expressed in many different formats, making it difficult to transfer between sites and devices. QUIP aims to be a standard format for this data, making the transfer of this data between information systems as easy as transferring images using the DICOM format. (In fact, we hope it is much easier!)
 
 
 ###Example
