@@ -114,9 +114,9 @@ An array of alternate mapping data can be sent in place of a serial number if ne
 
 ```
 'alternate-mapping-key-value-pairs': [
-	{'value': '77030074', 'key': 'dqa3-id'},
-	{'value': '1157', 'key': 'linac-serial'},
-	{'value': 'LA5 Truebeam', 'key': 'linac-name'}
+	{'value': '123456', 'key': 'dqa3-id'},
+	{'value': '1011', 'key': 'linac-serial'},
+	{'value': 'My Truebeam', 'key': 'linac-name'}
 	]
 ```
 
