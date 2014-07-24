@@ -10,7 +10,7 @@ Though the data associated with medical radiation equipment tests is somewhat st
 
 ##Example
 
-Here is a very basic example of the flatness measurement data taken by a Sun Nuclear DailyQA 3 on a Varian TrueBeam expressed in QUIP format.
+Here is a very basic example of the flatness measurement data taken by a Sun Nuclear DailyQA 3 on a Varian TrueBeam expressed in QUIP format. See JSON_data_example.json for a comprehensive example data item.
 
 ```
 {

@@ -2,6 +2,16 @@
     "linacs": [
         {
             "serial-number": "TB1234",
+			"alternate-mapping-key-value-pairs": [
+                {
+                    "key": "dqa3-id",
+                    "value": "d1234"
+                },
+                {
+                    "key": "room-id",
+                    "value": "1"
+                }
+            ],
             "configuration": {
                 "energy": {
                     "energy-type": {
@@ -67,7 +77,12 @@
                         },
                         "value": 21.5
                     },
-                    "atmospheric-pressure": None,
+                    "atmospheric-pressure": {
+						"units": {
+							"name": "kPa"
+						},
+						"value": 101.325
+					},
                     "data-values": [
                         {
                             "test-type": "FLATNESS",
@@ -108,7 +123,7 @@
                                 }
                             ]
                         }
-                    ] //.[data-values]
-                }]//.[tests]
-        }]//.[linacs]
+                    ] 		//.[data-values]
+                }]		//.[tests]
+        }]			//.[linacs]
 }
