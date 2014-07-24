@@ -140,21 +140,21 @@ Any set of keys can be sent through a QUIP as long as the receiving system has t
 The configuration data communicates the device configuration at the time the test data was recorded. The current configuration data options are appropriate for a linear accelerator.
 
 #####Energy
-*energy-type
-  *name: (string)
-*units
-  *name: (string)
-    *kV for kilo-voltage photons
-    *MV for mega-voltage photons
-    *MeV for mega-voltage electrons
-    *MV SRS for sterotactic radiosurgery photons
-    *MV FFF for flattening filter free mode
-  *value: (float)
+* energy-type
+  * name: (string)
+* units
+  * name: (string)
+    * kV for kilo-voltage photons
+    * MV for mega-voltage photons
+    * MeV for mega-voltage electrons
+    * MV SRS for sterotactic radiosurgery photons
+    * MV FFF for flattening filter free mode
+  * value: (float)
 
 #####Gantry
-*angle
-  *units: (string)
-  *value: (float)
+* angle
+  * units: (string)
+  * value: (float)
 
 
 
