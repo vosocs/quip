@@ -94,3 +94,24 @@ Here is an example of the flatness and symmetry measurement data taken by a Sun 
         }]//.[linacs]
 }
 ```
+
+###Structure
+
+The basic structure of a QUIP data set looks like this:
+
+```
+linac{
+	serial_number,
+	configuration_data{},
+	tests{
+		device{},
+		performed-on-date,
+		data-values{
+			test-type,
+			unit,
+			value,
+			attribute-list[]
+		}
+	}
+}
+```
