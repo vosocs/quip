@@ -102,7 +102,11 @@ The basic structure of a QUIP data set looks like this:
 ```
 linac{
 	serial_number,
-	configuration_data{},
+	configuration_data{
+		energy,
+		fieldsize,
+		source-to-surface-distance
+	},
 	tests{
 		device{},
 		performed-on-date,
@@ -115,3 +119,19 @@ linac{
 	}
 }
 ```
+
+A QUIP needs to have enough identifying information for a data system to link a data set to a particular medical device, and this is best done with a serial number. 
+
+####Alternate Mapping Key-Value Pairs
+An array of alternate mapping data can be sent in place of a serial number if necessary.
+
+```
+'alternate-mapping-key-value-pairs': [
+	{'value': '77030074', 'key': 'dqa3-id'},
+	{'value': '1157', 'key': 'linac-serial'},
+	{'value': 'LA5 Truebeam', 'key': 'linac-name'}
+	]
+```
+
+Any set of keys can be sent through a QUIP as long as the receiving system has the ability to link this mapping data to a device in the destination data system.
+
