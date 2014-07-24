@@ -142,36 +142,36 @@ The configuration data communicates the device configuration at the time the tes
   * value: (float)
 
 ####gantry
-* angle
+* angle (hash)
   * units: (string)
     * almost always "DEGREES". Don't complicate everyones' lives with radians.
   * value: (float)
 
 ####field-size
 * x
-  * units (string)
+  * units (hash)
     * name (string)
       * we recommend using "CENTIMETERS" as the standard unit of measure in all QA data being transferred
   * value (float)
 * y
-  * units (string)
+  * units (hash)
     * name (string)
       * we recommend using "CENTIMETERS" as the standard unit of measure in all QA data being transferred
   * value (float)
 
 ####source-to-surface-distance
-* units
+* units (hash)
 	* name (string)
 * value (float)
 
 ####dose
-* units
+* units (hash)
 	* name (string)
 	  * should be "MONITOR_UNIT", "CENTIGRAY", or similar
 * value (float)
 
 ####dose-rate
-* units
+* units (hash)
   * name (string)
     * should be "MU_PER_MINUTE", "CGY_PER_MINUTE", or similar
 * value (float)
