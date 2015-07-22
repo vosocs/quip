@@ -14,72 +14,58 @@ Here is a very basic example of the flatness measurement data taken by a Sun Nuc
 
 ```
 {
-    "linacs": [
+  "machines": [
+    {
+      "id": null,
+      "serial-number": "H199999",
+      "configuration": {
+        "machine-configuration-value-groups": [
+          {
+            "machine-configuration-values": [
+              {
+                "field-code": "FIELDSIZE_X",
+                "unit-code": "cm",
+                "value": "20"
+              },
+              {
+                "field-code": "FIELDSIZE_Y",
+                "unit-code": "cm",
+                "value": "20"
+              }
+            ]
+          }
+        ],
+        "machine-configuration-values": [
+          {
+            "field-code": "ENERGY",
+            "unit-code": "MeV",
+            "alt": "MV",
+            "value": "6"
+          }
+        ]
+      },
+      "tests": [
         {
-            "serial-number": "TB1234",
-            "configuration": {
-                "energy": {
-                    "energy-type": {
-                        "name": "PHOTON"
-                    },
-                    "units": {
-                        "name": "MV"
-                    },
-                    "value": 6.0
-                },
-                "field-size": {
-                    "x": {
-                        "units": {
-                            "name": "CENTIMETERS"
-                        },
-                        "value": 20.0
-                    },
-                    "y": {
-                        "units": {
-                            "name": "CENTIMETERS"
-                        },
-                        "value": 20.0
-                    }
-                },
-                "source-to-surface-distance": {
-                    "units": {
-                        "name": "CENTIMETERS"
-                    },
-                    "value": 100.0
-                }
-            },
-            "tests": [
-                {
-                    "device": {
-                        "type": "DQA3",
-                        "serial-number": "31419"
-                    },
-                    "performed-on-date": "22 Jul 2014 16:45:49 -0800",
-                    "is-basline": False,
-                    "temperature": {
-                        "units": {
-                            "name": "CELSIUS"
-                        },
-                        "value": 21.5
-                    },
-                    "data-values": [
-                        {
-                            "test-type": "FLATNESS",
-                            "unit": "PERCENTAGE",
-                            "is-baseline": True,
-                            "value": "1.03",
-                            "baseline-comparison": "DIFFERENCE_FROM_BASELINE",
-                            "attribute-list": [
-                                {
-                                    "type": "PLANE_DIRECTION",
-                                    "value": "COMBINED"
-                                }
-                            ]
-                        }
-                    ] 			//.[data-values]
-                }]			//.[tests]
-        }]				//.[linacs]
+          "device": {
+            "type": "DQA3",
+            "serial-number": "99999999"
+          },
+          "performed-on-date": "12 Jul 2015 10:01:53 -0700",
+          "is-basline": false,
+          "data-values": [
+            {
+              "test-raw-data-value-code": "DOSE",
+              "unit": "CENTIGRAY",
+              "is-baseline": false,
+              "value": 99.0037868714
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
+
 ```
 
 ##Structure
@@ -89,25 +75,30 @@ The basic structure of a QUIP data set looks like this:
 ```
 linac{
 	serial_number,
-	configuration_data{
+  machine-configuration-value-groups{
+    {
+      fieldsize_x{},
+      fieldsize_y{},
+    }
+  },
+	machine-configuration-values{
 		energy{},
-		fieldsize{},
 		source-to-surface-distance{}
 	},
 	tests{
 		device{},
 		performed-on-date,
-		data-values{
-			test-type,
+		data-values[{
+			test-value-code,
 			unit,
 			value,
-			attribute-list[]
-		}
+			is-baseline
+		}]
 	}
 }
 ```
 
-A QUIP needs to have enough identifying information for a data system to link a data set to a particular medical device, and this is best done with a serial number. 
+A QUIP needs to have enough identifying information for a data system to link a data set to a particular medical device, and this is best done with a serial number.
 
 ###Alternate Mapping Key-Value Pairs
 An array of alternate mapping data can be sent in place of a serial number if necessary.
@@ -202,36 +193,17 @@ Each item in the tests array may have the following identifying information:
 ####The data-values Array
 Each item in an item in the test array has an array of data values. Each individual test measurement will have its own item in the data-values array.
 
-* test-type (string)
+* test-value-code (string)
   * e.g. "FLATNESS", "SYMMETRY", "OUTPUT-FACTOR"
+  * test-value-codes should contain deviations from a desired value. If a calculation is required to compute a deviation, that data should go in a test-raw-data-value-code.
+* test-raw-data-value-code (string)
+  * Data points used to calculate a deviation from desired value should be sent in test-raw-data-value-code. The receiving system can be configured to process these values in a specific manner.
 * unit (string)
   * e.g. "PERCENTAGE", "CENTIGRAY", "HU", or similar
 * is-baseline (boolean)
 * value (float, boolean, string)
-* baseline-comparison (string)
-  * some tests express their values as a percentage of a baseline value, a difference from baseline, or a difference from a nominal value. This field allows the data source to specify how the data value is to be used in comparison to a baseline.
 * attribute-list (array of key-value pairs)
   * type (string)
     * e.g. "PLANE_DIRECTION"
   *  value (string)
     * e.g. "AXIAL"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

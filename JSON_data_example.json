@@ -1,129 +1,111 @@
 {
-    "linacs": [
+  "machines": [
+    {
+      "id": null,
+      "serial-number": "H191157",
+      "configuration": {
+        "machine-configuration-value-groups": [
+          {
+            "machine-configuration-values": [
+              {
+                "field-code": "FIELDSIZE_X",
+                "unit-code": "cm",
+                "value": "20"
+              },
+              {
+                "field-code": "FIELDSIZE_Y",
+                "unit-code": "cm",
+                "value": "20"
+              }
+            ]
+          }
+        ],
+        "machine-configuration-values": [
+          {
+            "field-code": "ENERGY",
+            "unit-code": "MeV",
+            "alt": "MV",
+            "value": "6"
+          },
+          {
+            "field-code": "DOSE_RATE_MU_PER_MIN",
+            "unit-code": "MU/min",
+            "value": "400"
+          },
+          {
+            "field-code": "DOSE_MU",
+            "unit-code": "MU",
+            "value": "100"
+          },
+          {
+            "field-code": "SSD",
+            "unit-code": "cm",
+            "value": "100"
+          }
+        ]
+      },
+      "tests": [
         {
-            "serial-number": "TB1234",
-			"alternate-mapping-key-value-pairs": [
-                {
-                    "key": "dqa3-id",
-                    "value": "d1234"
-                },
-                {
-                    "key": "room-id",
-                    "value": "1"
-                }
-            ],
-            "configuration": {
-                "energy": {
-                    "energy-type": {
-                        "name": "PHOTON"
-                    },
-                    "units": {
-                        "name": "MV"
-                    },
-                    "value": 6.0
-                },
-                "gantry": {
-                    "angle": {
-                        "units": {
-                            "name": "DEGREES"
-                        },
-                        "value": 0.0
-                    }
-                },
-                "field-size": {
-                    "x": {
-                        "units": {
-                            "name": "CENTIMETERS"
-                        },
-                        "value": 20.0
-                    },
-                    "y": {
-                        "units": {
-                            "name": "CENTIMETERS"
-                        },
-                        "value": 20.0
-                    }
-                },
-                "source-to-surface-distance": {
-                    "units": {
-                        "name": "CENTIMETERS"
-                    },
-                    "value": 100.0
-                },
-                "dose": {
-                    "units": {
-                        "name": "MONITOR_UNIT"
-                    },
-                    "value": 100.0
-                },
-                "dose-rate": {
-                    "units": {
-                        "name": "MU_PER_MINUTE"
-                    },
-                    "value": 400.0
-                }
+          "device": {
+            "type": "DQA3",
+            "serial-number": "77030074"
+          },
+          "performed-on-date": "22 Jun 2015 10:01:53 -0700",
+          "is-basline": false,
+          "temperature": null,
+          "atmospheric-pressure": null,
+          "data-values": [
+            {
+              "test-raw-data-value-code": "DOSE",
+              "unit": "CENTIGRAY",
+              "is-baseline": false,
+              "value": 99.0037868714
             },
-            "tests": [
-                {
-                    "device": {
-                        "type": "DQA3",
-                        "serial-number": "31419"
-                    },
-                    "performed-on-date": "22 Jul 2014 16:45:49 -0800",
-                    "is-basline": True,
-                    "temperature": {
-                        "units": {
-                            "name": "CELSIUS"
-                        },
-                        "value": 21.5
-                    },
-                    "atmospheric-pressure": {
-						"units": {
-							"name": "kPa"
-						},
-						"value": 101.325
-					},
-                    "data-values": [
-                        {
-                            "test-type": "FLATNESS",
-                            "unit": "PERCENTAGE",
-                            "is-baseline": True,
-                            "value": "1.03",
-                            "baseline-comparison": "DIFFERENCE_FROM_BASELINE",
-                            "attribute-list": [
-                                {
-                                    "type": "PLANE_DIRECTION",
-                                    "value": "COMBINED"
-                                }
-                            ]
-                        },
-                        {
-                            "test-type": "SYMMETRY",
-                            "unit": "PERCENTAGE",
-                            "is-baseline": True,
-                            "value": "-1.8",
-                            "baseline-comparison": "DIFFERENCE_FROM_BASELINE",
-                            "attribute-list": [
-                                {
-                                    "type": "PLANE_DIRECTION",
-                                    "value": "AXIAL"
-                                }
-                            ]
-                        },
-                        {
-                            "test-type": "SYMMETRY",
-                            "unit": "PERCENTAGE",
-                            "is-baseline": True,
-                            "value": "-0.11",
-                            "baseline-comparison": "DIFFERENCE_FROM_BASELINE",
-                            "attribute-list": [
-                                {
-                                    "type": "PLANE_DIRECTION",
-                                    "value": "TRANSVERSE"
-                                }
-                            ]
-                        }
-                    ] 		//.[data-values]
-                }]		//.[tests]
-        }]			//.[linacs]
+            {
+              "test-raw-data-value-code": "AXIAL_SYMMETRY",
+              "unit": "PERCENTAGE",
+              "is-baseline": false,
+              "value": -0.8701425304
+            },
+            {
+              "test-raw-data-value-code": "TRANS_SYMMETRY",
+              "unit": "PERCENTAGE",
+              "is-baseline": false,
+              "value": 0.4561136489
+            },
+            {
+              "test-raw-data-value-code": "AXIAL_FLATNESS",
+              "unit": "PERCENTAGE",
+              "is-baseline": false,
+              "value": 0.886141453
+            },
+            {
+              "test-raw-data-value-code": "TRANS_FLATNESS",
+              "unit": "PERCENTAGE",
+              "is-baseline": false,
+              "value": 0.886121453
+            },
+            {
+              "test-raw-data-value-code": "DELTA_ENERGY",
+              "unit": "PERCENTAGE",
+              "is-baseline": false,
+              "value": -375.539450061
+            },
+            {
+              "test-raw-data-value-code": "X_DIMENSION",
+              "unit": "CENTIMETER",
+              "is-baseline": false,
+              "value": 19.919536296
+            },
+            {
+              "test-raw-data-value-code": "Y_DIMENSION",
+              "unit": "CENTIMETER",
+              "is-baseline": false,
+              "value": 19.8906157198
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
